@@ -12,17 +12,17 @@ export default function App() {
 
   function increaseStep() {
     // Increase the step by 1
-    if (step < 3) setstep(step + 1);
+    if (step < 3) setstep((currentStep) => currentStep + 1);
   }
 
   function decreaseStep() {
     // Decrease the step by 1
-    if (step > 1) setstep(step - 1);
+    if (step > 1) setstep((currentStep) => currentStep - 1);
   }
 
   return (
     <div className="App">
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((isOpen) => !isOpen)}>
         {isOpen ? "\u2716" : "\u2714"}
       </button>
       {isOpen && (
