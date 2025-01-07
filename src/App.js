@@ -51,19 +51,30 @@ function Steps() {
       </p>
 
       <div className="buttons">
-        <button
-          style={{ backgroundColor: "#35ff21", color: "#000" }}
-          onClick={decreaseStep}
-        >
-          Previous
-        </button>
-        <button
-          style={{ backgroundColor: "#35ff21", color: "#000" }}
-          onClick={increaseStep}
-        >
-          Next
-        </button>
+        <CustomButton
+          text="Previous"
+          backgroundColor="#ff32a1"
+          color="#fff"
+          onClickHandler={decreaseStep}
+        />
+        <CustomButton
+          text="Next"
+          backgroundColor="#35ff21"
+          color="#000"
+          onClickHandler={increaseStep}
+        />
       </div>
     </div>
+  );
+}
+
+function CustomButton({ text, backgroundColor, color, onClickHandler }) {
+  return (
+    <button
+      style={{ backgroundColor: backgroundColor, color: color }}
+      onClick={onClickHandler}
+    >
+      {text}
+    </button>
   );
 }
